@@ -11,7 +11,7 @@ const SearchBooks = () => {
   const [searchedBooks, setSearchedBooks] = useState([]);
   const [searchInput, setSearchInput] = useState('');
   const [savedBookIds, setSavedBookIds] = useState(getSavedBookIds());
-  const [saveBookMutation] =useMutation[SAVE_BOOK]
+  const [saveBookMutation] =useMutation(SAVE_BOOK)
 
  
   useEffect(() => {
