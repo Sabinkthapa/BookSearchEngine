@@ -54,7 +54,7 @@
 - npm: [node Package manager](https://www.npmjs.com)
 - Expressjs: [nodejs popular web framework](https://expressjs.com)
 - Mongo: [Documentation of MongoDB](https://www.mongodb.com/)
-- link of connecting app with Mongo Atlas (https://coding-boot-camp.github.io/full-stack/mongodb/   deploy-with-heroku-and-mongodb-atlas)
+- link of connecting app with Mongo Atlas (https://coding-boot-camp.github.io/full-stack/mongodb-deploy-with-heroku-and-mongodb-atlas)
 
   ## MIT License
 
