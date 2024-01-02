@@ -16,7 +16,7 @@ const SearchBooks = () => {
  
   useEffect(() => {
     return () => saveBookIds(savedBookIds);
-  });
+  },[saveBookIds]);
 
   // create method to search for books and set state on form submit
   const handleFormSubmit = async (event) => {
@@ -59,18 +59,28 @@ const SearchBooks = () => {
     if (!token) {
       return false;
     }
-
     try {
       await saveBookMutation({
+        //check here once
         variables: {
           userId: Auth.getProfile().data._id,
-          bookData:bookToSave,
+          bookData: bookToSave,
         },
       });
 
       setSavedBookIds([...savedBookIds, bookToSave.bookId]);
     } catch (err) {
-      console.error(err);
+      if (err.graphQLErrors) {
+        err.graphQLErrors.forEach(({ message, extensions }) => {
+          if (extensions.code === "UNAUTHENTICATED") {
+            // Handle authentication error
+            console.error("Authentication error:", message);
+            // Redirect to login page or show login form
+          }
+        });
+      } else {
+        console.error(err);
+      }
     }
   };
 
