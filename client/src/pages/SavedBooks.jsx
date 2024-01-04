@@ -60,7 +60,7 @@ import { removeBookId } from '../utils/localStorage';
             : 'You have no saved books!'}
         </h2>
         <Row>
-          {userData.savedBooks?.map((book) => {
+          {userData.savedBooks?.map((book,index) => {
             return (
               <Col md="4" key={book.bookId || index}>
                 <Card border="dark">

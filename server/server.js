@@ -4,10 +4,11 @@ const {expressMiddleware} =require('@apollo/server/express4');
 const path = require('path');
 const {authMiddleware}=require('./utils/auth')
 const cors = require ("cors")
+const dotenv = require('dotenv')
 
 const {typeDefs, resolvers} = require ('./schemas');
 const db =require ('./config/connection')
-
+dotenv.config();
 const PORT = process.env.PORT || 3001;
 const app = express();
 app.use(cors());
