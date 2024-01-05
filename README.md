@@ -48,7 +48,7 @@
 
   ## links
 - Link of my [Github repository](https://github.com/Sabinkthapa/BookSearchEngine.git)
-- Heroku [Heroku] ()
+- Netlify [Netlify] (https://storebook-app.netlify.app/)
 
   ## Credits
 - npm: [node Package manager](https://www.npmjs.com)
