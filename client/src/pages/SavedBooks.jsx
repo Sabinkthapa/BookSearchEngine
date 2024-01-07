@@ -43,8 +43,6 @@ import { removeBookId } from '../utils/localStorage';
   if(error) {
     return <h3>Error loading saved books</h3>
   } 
-   
-
    const userData = data?.getSingleUser || {};
   return (
     <>
@@ -60,9 +58,8 @@ import { removeBookId } from '../utils/localStorage';
             : 'You have no saved books!'}
         </h2>
         <Row>
-          {userData.savedBooks?.map((book,index) => {
-            return (
-              <Col md="4" key={book.bookId || index}>
+          {userData.savedBooks?.map(book => (
+              <Col md="4" key={book.bookId}>
                 <Card border="dark">
                   {book.image ? (
                     <Card.Img
@@ -84,8 +81,7 @@ import { removeBookId } from '../utils/localStorage';
                   </Card.Body>
                 </Card>
               </Col>
-            );
-          })}
+            ))}
         </Row>
       </Container>
     </>
