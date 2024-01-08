@@ -10,6 +10,7 @@ const {typeDefs, resolvers} = require ('./schemas');
 const db =require ('./config/connection')
 
 const PORT = 3001;
+const ENV = 'development';
 const app = express();
 app.use(cors());
 const server = new ApolloServer({
@@ -27,7 +28,7 @@ app.use(express.json());
 app.use('/graphql', expressMiddleware(server));
 
 // if we're in production, serve client/build as static assets
-if (process.env.NODE_ENV === 'production') {
+if (ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/dist')));
 
   app.get('*', (req, res) => {
