@@ -1,8 +1,17 @@
 const mongoose = require('mongoose');
+const MONGODB_URI = "mongodb+srv://sabinkumarthapa:Eu44Qu7P4rU7IACy@cluster0.af4bny1.mongodb.net/?retryWrites=true&w=majority";
 
-mongoose.connect(
-    process.env.MONGODB_URI || 'mongodb://localhost:27017/googlebooks')
-
+const connectionParams = {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}
+mongoose.connect(MONGODB_URI, connectionParams)
+.then(()=> {
+    console.log("connected to mongoatlase")
+}).catch((e)=>{
+    console.log("Unable to connect atlas")
+    console.log(e)
+})
 
 module.exports = mongoose.connection;
 
