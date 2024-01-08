@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const MONGODB_URI = "mongodb+srv://sabinkumarthapa:Eu44Qu7P4rU7IACy@cluster0.af4bny1.mongodb.net/?retryWrites=true&w=majority";
+const MONGODB_URI = "mongodb+srv://sabinkumarthapa:Eu44Qu7P4rU7IACy@cluster0.af4bny1.mongodb.net/Googlebooks?retryWrites=true&w=majority";
 
 const connectionParams = {
     useNewUrlParser: true,
