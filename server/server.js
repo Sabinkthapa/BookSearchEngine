@@ -1,3 +1,4 @@
+
 const express = require('express');
 const { ApolloServer } = require('@apollo/server');
 const {expressMiddleware} =require('@apollo/server/express4');
@@ -9,8 +10,8 @@ const cors = require ("cors")
 const {typeDefs, resolvers} = require ('./schemas');
 const db =require ('./config/connection')
 
-const PORT = 3001;
-const ENV = 'development';
+const PORT = process.env.PORT || 3001;
+const ENV = process.env.NODE_ENV || 'development';
 const app = express();
 app.use(cors());
 const server = new ApolloServer({
@@ -28,7 +29,7 @@ app.use(express.json());
 app.use('/graphql', expressMiddleware(server));
 
 // if we're in production, serve client/build as static assets
-if (ENV === 'production') {
+if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/dist')));
 
   app.get('*', (req, res) => {
