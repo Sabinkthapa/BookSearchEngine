@@ -48,7 +48,7 @@
 
   ## links
 - Link of my [Github repository](https://github.com/Sabinkthapa/BookSearchEngine.git)
-- Netlify [Netlify] (https://storebook-app.netlify.app/)
+- Netlify [Render] (https://googlebooksstore.onrender.com)
 
   ## Credits
 - npm: [node Package manager](https://www.npmjs.com)
